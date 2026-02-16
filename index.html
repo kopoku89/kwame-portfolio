@@ -1,68 +1,97 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kwame Opoku | Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="container">
-      <h1>Kwame Opoku</h1>
-      <p class="subtitle">Learning Git & GitHub • Building real projects</p>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kwame Opoku | Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+</head>
 
-    <main class="container">
-      <section id="about" class="card">
-        <h2>About</h2>
-        <p>
-          Hi, I’m Kwame. I’m learning software development and building projects
-          while mastering Git and GitHub.
-        </p>
-      </section>
+<body>
 
-      <section id="skills" class="card">
-        <h2>Skills</h2>
-        <ul class="grid">
-          <li>Git</li>
-          <li>GitHub</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
-      </section>
+  <section class="hero">
+  <div class="hero-content">
+    <h1>Hi, I'm Kwame Opoku</h1>
+    <p>Frontend Developer • Problem Solver • Tech Enthusiast</p>
+    <a href="#projects" class="cta-button">View My Work</a>
+  </div>
+</section>
+<header class="container">
+<h1>Kwame Opoku</h1>
+<p class="subtitle">Learning Git & GitHub • Building real projects</p>
 
-      <section id="projects" class="card">
-        <h2>Projects</h2>
-        <p>Coming soon — this will list the projects I build.</p>
-        <ul>
-          <li><strong>My First Git Project</strong> — hello.txt + Git basics</li>
-          <li><strong>Portfolio Website</strong> — this site</li>
-        </ul>
-      </section>
+<nav class="nav">
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>
-          GitHub:
-          <a href="https://github.com/kopoku89" target="_blank" rel="noreferrer"
-            >@kopoku89</a
-          >
-        </p>
-      </section>
-    </main>
+<main class="container">
 
-    <footer class="container footer">
-      <p>© <span id="year"></span> Kwame Opoku</p>
-    </footer>
+<section id="about" class="card">
+<h2>About</h2>
+<p>
+Hi, I'm Kwame. I'm building my foundation in software development by
+learning Git, GitHub, and web technologies.
+</p>
+</section>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </body>
+<section id="skills" class="card">
+<h2>Skills</h2>
+<ul class="grid">
+<li>Git</li>
+<li>GitHub</li>
+<li>HTML</li>
+<li>CSS</li>
+</ul>
+</section>
+
+<section id="projects" class="card">
+<h2>Projects</h2>
+<ul>
+
+<li>
+<strong><a href="https://github.com/kopoku89/my-first-git-project" target="_blank">
+My First Git Project
+</a></strong> — Learning Git basics and version control.
+</li>
+
+<li>
+<strong><a href="https://github.com/kopoku89/kwame-portfolio" target="_blank">
+Portfolio Website
+</a></strong> — Personal website built with HTML & CSS.
+</li>
+
+</ul>
+</section>
+
+<section id="contact" class="card">
+<h2>Contact</h2>
+<p>
+GitHub:
+<a href="https://github.com/kopoku89" target="_blank">@kopoku89</a>
+</p>
+</section>
+
+</main>
+
+<footer class="container footer">
+<p>© <span id="year"></span> Kwame Opoku</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href"))
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+</script>
+
+</body>
 </html>
