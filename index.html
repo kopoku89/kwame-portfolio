@@ -21,10 +21,18 @@
 <p class="subtitle">Learning Git & GitHub • Building real projects</p>
 
 <nav class="nav">
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
+<div class="logo">Kwame</div>
+
+  <!-- hamburger toggle -->
+  <div class="menu-toggle" id="mobile-menu">☰</div>
+
+  <!-- links wrapper -->
+  <div class="nav-links" id="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 </header>
 
@@ -82,15 +90,29 @@ GitHub:
 </footer>
 
 <script>
-document.getElementById("year").textContent = new Date().getFullYear();
+  // Auto year
+  const year = document.getElementById("year");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute("href"))
-      .scrollIntoView({ behavior: "smooth" });
+  // Mobile menu
+  document.addEventListener("DOMContentLoaded", () => {
+    const menu = document.getElementById("mobile-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    if (!menu || !navLinks) return;
+
+    menu.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+      });
+    });
   });
-});
 </script>
 
 </body>
