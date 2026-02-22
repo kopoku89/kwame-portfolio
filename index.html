@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Kwame Opoku | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -24,7 +25,9 @@
 <div class="logo">Kwame</div>
 
   <!-- hamburger toggle -->
-  <div class="menu-toggle" id="mobile-menu">☰</div>
+  <div class="menu-toggle" id="mobile-menu">
+  &#9776;
+</div>
 
   <!-- links wrapper -->
   <div class="nav-links" id="nav-links">
@@ -35,7 +38,18 @@
   </div>
 </nav>
 </header>
+<section id="projects" class="projects">
+  <h2>Projects</h2>
 
+  <div class="project-card fade-in">
+    <img src="images/project1.png" alt="Git Basics Project Screenshot">
+    <div class="project-info">
+      <h3>Landing Page</h3>
+      <p>Responsive landing page built with HTML, CSS & JS.</p>
+      <a href="#">Live Demo</a>
+    </div>
+  </div>
+</section>
 <main class="container">
 
 <section id="about" class="card">
@@ -81,6 +95,18 @@ Portfolio Website
 GitHub:
 <a href="https://github.com/kopoku89" target="_blank">@kopoku89</a>
 </p>
+<div class="contact-wrap">
+  <form class="contact-form">
+    <div class="row">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+    </div>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
 </section>
 
 </main>
@@ -89,52 +115,7 @@ GitHub:
 <p>© <span id="year"></span> Kwame Opoku</p>
 </footer>
 
-<script>
-  // Auto year
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
 
-  // Mobile menu
-  document.addEventListener("DOMContentLoaded", () => {
-    const menu = document.getElementById("mobile-menu");
-    const navLinks = document.getElementById("nav-links");
-
-    if (!menu || !navLinks) return;
-
-    menu.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-
-    navLinks.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-      });
-    });
-    // Highlight active section while scrolling
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navItems.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === `#${current}`) {
-      link.classList.add("active");
-    }
-  });
-});
-  });
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
