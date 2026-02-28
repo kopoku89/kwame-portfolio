@@ -1,12 +1,30 @@
-body { outline: 6px solid lime; }
 :root {
-  --bg: #0b0f17;
-  --card: #111827;
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --accent: #60a5fa;
-  --border: #1f2937;
+  --bg: #0b0b0f;
+  --card: #111;
+  --text: #eaeaea;
+  --muted: #b8b8b8;
+  --border: #222;
+  --accent: #4f46e5;
 }
+
+body.light {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #121212;
+  --muted: #4b5563;
+  --border: #e5e7eb;
+  --accent: #4f46e5;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+a { color: var(--accent); }
+p { color: var(--muted); }
 html {
   scroll-behavior: smooth;
 }
@@ -39,17 +57,22 @@ body {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
 }
 
 .nav a {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
   border-bottom: 1px solid transparent;
 }
 
 .nav a:hover {
-  color: white;
-  border-bottom-color: white;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 .card {
@@ -265,19 +288,24 @@ header nav a:hover {
     display: block;
   }
 }@media (max-width: 768px) {
-  body {
-    outline: 6px solid red;
-  }
-}body { outline: 6px solid lime !important; }
-
-@media (max-width: 768px) {
-  body { outline: 6px solid red !important; }
-}.menu-toggle {
+  
+.menu-toggle {
   display: block !important;
-  color: red !important;
-  background: yellow !important;
-  padding: 8px 12px !important;
-  border-radius: 8px !important;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  background: var(--border);
+}
 }/* basic nav */
 .nav {
   display: flex;
@@ -393,7 +421,7 @@ h2 {
 }#projects ul {
   margin-top: 1rem;
   padding-left: 1.2rem;
-  color: #eaeaea;
+  color: var(--muted);
 }
 
 #projects li {
@@ -497,4 +525,21 @@ h2 {
   .nav-links.open {
     display: flex;
   }
+}/* Theme toggle - final look */
+.theme-toggle{
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* keep it subtle */
+.theme-toggle:hover{
+  transform: translateY(-1px);
 }

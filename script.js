@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const themeBtn = document.getElementById("theme-toggle");
+
+// Load saved theme
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "light") {
+  document.body.classList.add("light");
+  if (themeBtn) themeBtn.textContent = "☀️";
+}
+
+// Toggle theme
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+
+    const isLight = document.body.classList.contains("light");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+    themeBtn.textContent = isLight ? "☀️" : "🌙";
+  });
+}
   const faders = document.querySelectorAll(".fade-in");
 
   const observer = new IntersectionObserver(
